@@ -2,13 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhavana's Portfolio</title>
     <link rel="icon" type="image/png" href="assets/favicon.e9ec75de.png" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bhavana's Website</title>
-<script type="module" crossorigin src="assets/index.2f6ca556.js"></script>
-<link rel="modulepreload" href="assets/vendor.37082f73.js">
-<link rel="stylesheet" href="assets/index.515cc525.css">
-</head>
+    <script type="module" crossorigin src="assets/index.2f6ca556.js"></script>
+    <link rel="modulepreload" href="assets/vendor.37082f73.js">
+    <link rel="stylesheet" href="assets/index.515cc525.css">
+
+    <style>
+      /* General Styling for the Website Theme */
+      body {
+        color: #d5edf5; /* Light cyan for text */
+        background: black; /* Space-inspired background */
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1, h2, h3 {
+        color: #f0faff;
+      }
+
+      p, li {
+        color: #cce7ff;
+      }
+
+      a {
+        color: #00e6ff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #76ffff;
+      }
+
+      /* Canvas for Space Animation */
+      canvas#bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+
+      /* Certifications Card Stack */
+      .card-stack-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        margin: 40px auto;
+      }
+
+      .item {
+        position: absolute;
+        width: 300px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(145deg, #293d5a, #1e2e48);
+        color: #d8f3ff;
+        border: 1px solid rgba(220, 255, 255, 0.3);
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 160, 255, 0.2);
+        user-select: none;
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.85rem;
+        font-family: Arial, sans-serif;
+        padding: 0 15px;
+        overflow: hidden;
+      }
+
+      .item:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 20px rgba(0, 180, 255, 0.4);
+      }
+    </style>
+  </head>
+
   <body>
     <canvas id="bg"></canvas>
 
@@ -53,8 +128,7 @@
         </p>
       </section>
 
-     <!------Projects----------->
-       <section class="left">
+     <section class="left">
   <h2>👩🏽‍🚀 Projects</h2>
   <p>
     Throughout my academic and professional journey, I have worked on
@@ -102,42 +176,49 @@
     }
 
     .project-card {
-      background: #f9fafa;
-      border-radius: 8px;
+      background: linear-gradient(145deg, #233a54, #1a2940); /* Subtle dark gradient */
+      border-radius: 15px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #007acc;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+      border-left: 4px solid #00c4ff; /* Cyan highlight */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px); /* Slight lift on hover */
+      box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3); /* Cyan glow */
     }
 
     .project-card h3 {
       margin-top: 0;
       font-size: 1.2rem;
-      color: #007acc;
+      color: #00e6ff; /* Bright cyan for titles */
     }
 
     .project-card p {
       font-size: 1rem;
-      color: #333;
-      margin-bottom: 10px;
+      color: #d4ecff; /* Light gray for text */
+      margin-bottom: 15px;
     }
 
     .project-link {
       display: inline-block;
       font-size: 0.9rem;
-      color: white;
-      background: #007acc;
-      padding: 5px 10px;
-      border-radius: 4px;
+      background: #007acc; /* Blue button background */
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .project-link:hover {
-      background: #005f99;
+      background: #005f99; /* Darker blue hover effect */
+      transform: scale(1.05); /* Slight scale on hover */
     }
   </style>
 </section>
-
 
        <!-----------------Accomplishments-------------->
       <section class="light">
@@ -167,13 +248,14 @@
           </li>
         </ul>
       </section>
-         
-      <!-- Research Projects -->
+
+
+      
+<!----Research Projects------>
       <section class="left">
-        <section class="left">
   <h2>📚 Research Projects</h2>
   <p>
-    Research has played a vital role in shaping my understanding of cutting-edge technologies. Through my work in <strong>machine learning, stable diffusion models</strong>, and <strong>secure communication</strong>, I aim to contribute to solving real-world problems with innovative solutions.
+    Research has played a critical role in shaping my understanding of cutting-edge technologies. My work in <strong>machine learning, stable diffusion models</strong>, and <strong>secure communication</strong> aims to contribute innovative solutions to real-world problems.
   </p>
 
   <div class="projects-container">
@@ -181,7 +263,7 @@
     <div class="project-card">
       <h3>🖼️ Text-To-Image Generation Model Using Stable Diffusion</h3>
       <p>
-        An IEEE project focused on generating coherent and high-quality images from text inputs using <strong>Stable Diffusion</strong> and advanced <strong>Machine Learning</strong> techniques. This project aims to push the boundaries of generative AI to solve challenges in creative design and automated visual production.
+        An IEEE project that focuses on generating coherent and high-quality images from text inputs using <strong>Stable Diffusion</strong> and advanced <strong>Machine Learning</strong> techniques. This project explores the boundaries of generative AI for creative designs and automated production.
       </p>
       <a href="https://github.com/Bhavana9051/Text-To-Image-Generation-using-Stable-Diffusion" target="_blank" class="project-link">View Code on GitHub</a>
     </div>
@@ -190,7 +272,7 @@
     <div class="project-card">
       <h3>🔒 Secure Communication through Coverless Steganography</h3>
       <p>
-        This IEEE project explores the potential of <strong>HAAR Wavelet Transform</strong> and <strong>steganography</strong> techniques to develop secure communication protocols. The project focuses on coverless methods to encode and decode messages with robust features for enhanced security.
+        This IEEE project explores the use of <strong>HAAR Wavelet Transform</strong> and <strong>steganography</strong> to improve secure communication protocols. The focus is on coverless methods for encoding and decoding messages for enhanced privacy.
       </p>
       <a href="https://github.com/Bhavana9051/Secure-Communication-through-Coverless-Steganography-using-HAAR-Wavelet-Transform" target="_blank" class="project-link">View Code on GitHub</a>
     </div>
@@ -205,107 +287,121 @@
     }
 
     .project-card {
-      background: #f9fafa;
-      border-radius: 8px;
+      background: linear-gradient(145deg, #202e46, #18243a); /* Dark gradient */
+      border-radius: 15px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #007acc;
+      border-left: 4px solid #00d1ff; /* Bright cyan */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px); /* Slight lift */
+      box-shadow: 0 10px 20px rgba(0, 200, 255, 0.4); /* Cyan glow */
     }
 
     .project-card h3 {
       margin-top: 0;
       font-size: 1.2rem;
-      color: #007acc;
+      color: #00e6ff; /* Bright cyan */
     }
 
     .project-card p {
+      color: #d0e7ff; /* Light gray text */
       font-size: 1rem;
-      color: #333;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .project-link {
       display: inline-block;
       font-size: 0.9rem;
-      color: white;
+      color: #ffffff;
       background: #007acc;
-      padding: 5px 10px;
-      border-radius: 4px;
+      padding: 8px 12px;
+      border-radius: 5px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .project-link:hover {
       background: #005f99;
+      transform: scale(1.05);
     }
   </style>
 </section>
 
 
-
-        <-----------------Research Thesis---------------->
-          <section class="light">
+      <!-----Research End Semester Thesis----------->
+      <section class="light">
   <h2>📄 Research Thesis</h2>
   <p>
-    My end-semester thesis focuses on building a novel robotic manipulation framework to tackle complex grasping tasks through 3D Gaussian Splatting and natural language queries. This research combines advanced concepts in <strong>robotic simulation, scene reconstruction, and open-vocabulary query-based grasping.</strong>
+    My end-semester thesis focuses on building a novel robotic manipulation framework to tackle complex grasping tasks using <strong>3D Gaussian Splatting</strong> and natural language queries. This research explores <strong>robotic simulation</strong>, <strong>scene reconstruction</strong>, and <strong>open-vocabulary grasping</strong>.
   </p>
 
   <div class="project-card">
     <h3>🤖 GaussianGrasper: 3D Language Gaussian Splatting for Open-vocabulary Robotic Grasping</h3>
     <p>
-      Supervised by <strong>Prof. G.C. Nandi</strong>, this thesis utilizes 3D Gaussian splatting for training robotic systems in interpreting and executing dynamic tasks. Combining principles of machine vision and AI, the study emphasizes improvements in scene calibration and data preprocessing pipelines.
+      Supervised by <strong>Prof. G.C. Nandi</strong>, this thesis utilizes 3D Gaussian splatting to enable robots to interpret and execute dynamic tasks. The research emphasizes improvements in data pipelines, scene calibration, and query-based action control.
     </p>
     <ul>
       <li>Designed alternative pipelines to mitigate incomplete datasets.</li>
-      <li>Proposed flowcharts and improvements for precise robotic grasp simulations.</li>
-      <li>Explored language-based query control for robotic actions.</li>
+      <li>Proposed improvements for precise robotic grasp simulations.</li>
+      <li>Explored language-based queries for practical robotic actions.</li>
     </ul>
     <a href="https://drive.google.com/file/d/1Av4gYHIgA527goYcAEfL7-fBP9Il25JM/view?usp=sharing" target="_blank" class="project-link">Download Full Thesis</a>
   </div>
 
   <style>
     .project-card {
-      background: #f8f6ff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #ff914d;
+      background: linear-gradient(135deg, #1b384c, #152736); /* Dark gradient */
+      border-radius: 15px;
+      padding: 25px;
+      border-left: 4px solid #ff914d; /* Orange highlight */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 145, 77, 0.5); /* Orange glow */
     }
 
     .project-card h3 {
       margin-top: 0;
-      font-size: 1.2rem;
-      color: #ff914d;
+      font-size: 1.25rem;
+      color: #feb873; /* Lighter orange for the title */
     }
 
     .project-card ul {
       padding-left: 20px;
-      margin: 10px 0;
+      color: #c8e3ff; /* Light text */
+      margin: 15px 0 20px;
     }
 
     .project-card ul li {
+      margin-bottom: 10px;
       font-size: 0.95rem;
     }
 
     .project-link {
       display: inline-block;
       font-size: 0.9rem;
-      color: white;
-      background: #ff914d;
-      padding: 5px 10px;
-      border-radius: 4px;
+      color: #ffffff;
+      background: #ff914d; /* Orange button */
+      padding: 8px 12px;
+      border-radius: 6px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .project-link:hover {
       background: #cc7437;
+      transform: scale(1.05);
     }
   </style>
 </section>
-
-
-          
 
       <blockquote>
         <p>
@@ -314,7 +410,8 @@
         </p>
       </blockquote>
 
-     <section class="light">
+      
+     <section class="left">
   <h2>🌮 Work History</h2>
 
   <!-- ZScaler Internship -->
@@ -359,140 +456,27 @@
 </section>
 
 
-          <--------------------Certifications--------------------->
+          <!--------------------Certifications--------------------->
+ <section class="left">
+        <h2>📜 Certifications</h2>
+        <p>
+          Below, you'll find a visual stack of certifications I've earned, with links to their corresponding proofs:
+        </p>
+        <div class="card-stack-container">
+          <!-- Stack Items (Certifications) -->
+          <a class="item" href="https://drive.google.com/file/d/1s7ADYRZlhBHmIhFzNb99CO3H4IOUDCjz/view?usp=drive_link" target="_blank">Comprehensive Monitoring with Prometheus (Skillsoft)</a>
+          <a class="item" href="https://drive.google.com/file/d/1qSLIkC27r845RUAA3TJWL0P2dMJIoAzZ/view?usp=drive_link" target="_blank">Create & Deploy React Apps to Netlify (Skillsoft)</a>
+          <a class="item" href="https://drive.google.com/file/d/1YRwtDpLCNpC7QGg2EFTHEep4FOj1V9Pf/view?usp=sharing" target="_blank">Creating a VR App with Unity (Skillsoft)</a>
+          <a class="item" href="https://drive.google.com/file/d/1V3FCeCn1uPN80stFAJ-QRLZcyJpnGBb2/view?usp=sharing" target="_blank">Creating Themes with WordPress (Skillsoft)</a>
+          <a class="item" href="https://drive.google.com/file/d/1ZEkyFocpWte85aQyqy9Gn5RVVb9LOV4O/view?usp=sharing" target="_blank">Generative AI (Guvi - SAWIT Learnathon)</a>
+          <a class="item" href="https://drive.google.com/file/d/1G8Jb3sbE6ZomMNSrtVn74_X8xDtZmjRw/view?usp=sharing" target="_blank">Microsoft Azure - Cloud Computing (Skillsoft)</a>
+          <a class="item" href="https://drive.google.com/file/d/1eTNOuJisUqjVJH44sQqRHRsauTl44X_U/view?usp=sharing" target="_blank">React Native Going Off-Platform (Skillsoft)</a>
+          <a class="item" href="https://drive.google.com/file/d/1LhKKuI-mzhqBpOMHFeyOK6Q6hHIpGmFv/view?usp=sharing" target="_blank">Working with Content in WordPress (Skillsoft)</a>
+        </div>
+      </section>
+
+      
      <section class="left">
-  <h2>📜 Certifications</h2>
-  <p>
-    Here are some of the certifications I’ve earned to build and deepen my technical expertise:
-  </p>
-
-  <!-- Card Animation Container -->
-  <div class="card-stack-container">
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1s7ADYRZlhBHmIhFzNb99CO3H4IOUDCjz" alt="Generative AI Certificate">
-      <h3>Generative AI Course Certificate</h3>
-      <p>
-        Completed under the <strong>SAWIT Learnathon</strong> organized by Guvi Geek Networks.
-      </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1qSLIkC27r845RUAA3TJWL0P2dMJIoAzZ" alt="Monitoring with Prometheus Certificate">
-      <h3>Comprehensive Monitoring with Prometheus</h3>
-      <p>
-        Hands-on learning of infrastructure monitoring using Prometheus.
-      </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1YRwtDpLCNpC7QGg2EFTHEep4FOj1V9Pf" alt="Azure Certification">
-      <h3>Microsoft Azure - Cloud Computing</h3>
-      <p>
-        Learned the fundamentals of managing scalable cloud solutions.
-      </p>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1V3FCeCn1uPN80stFAJ-QRLZcyJpnGBb2" alt="WordPress Themes Certification">
-      <h3>Creating Themes in WordPress</h3>
-      <p>
-        Focused on designing flexible and responsive WordPress themes.
-      </p>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1ZEkyFocpWte85aQyqy9Gn5RVVb9LOV4O" alt="Unity VR Certification">
-      <h3>Creating a VR App with Unity</h3>
-      <p>
-        Gained expertise in immersive technology for Virtual Reality app development.
-      </p>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1G8Jb3sbE6ZomMNSrtVn74_X8xDtZmjRw" alt="OWASP Certification">
-      <h3>OWASP Top 10 - Securing Web Applications</h3>
-      <p>
-        Comprehensive understanding of web application security and OWASP standards.
-      </p>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1eTNOuJisUqjVJH44sQqRHRsauTl44X_U" alt="Splunk Visualization Certificate">
-      <h3>Visualizations and Charts in Splunk</h3>
-      <p>
-        Learned to create interactive data visualizations using Splunk.
-      </p>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="card">
-      <img src="https://drive.google.com/uc?id=1LhKKuI-mzhqBpOMHFeyOK6Q6hHIpGmFv" alt="WordPress Plugins Certification">
-      <h3>Themes and Plugins in WordPress</h3>
-      <p>
-        Developed advanced skills in WordPress plugins and theme creation.
-      </p>
-    </div>
-  </div>
-
-  <style>
-    .card-stack-container {
-      position: relative;
-      width: 80%;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .card {
-      position: relative;
-      width: 250px;
-      height: 350px;
-      background: #f9fafa;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      padding: 10px;
-      margin: 0;
-      font-size: 1.1rem;
-      color: #32a852;
-      text-align: center;
-    }
-
-    .card p {
-      padding: 0 10px;
-      margin: 8px 0;
-      font-size: 0.9rem;
-      color: #333;
-      text-align: center;
-    }
-  </style>
-</section>
-
-     <section class="light">
   <h2>🛠️ Skills</h2>
   <ul>
     <li>
@@ -519,7 +503,7 @@
   </ul>
 </section>
 
-      <section class="left">
+      <section class="light">
         <h2>🎓 Education</h2>
 
         <h3>B.Tech in Information Technology</h3>
@@ -544,7 +528,7 @@
         </p>
       </section>
 
-      <section class="light">
+      <section class="left">
         <h2>🔗 Profile Links</h2>
 
         <ul>
@@ -571,12 +555,12 @@
         </ul>
       </section>
 
-      <section class="left">
+      <section class="light">
         <h2>Wanna Checkout my projects</h2>
         <p>HeadOut to my GitHub</p>
       </section>
 
-      <section class="light">
+      <section class="left">
         <h2>Hey, What About My Resume?</h2>
         <p>
           <a
@@ -640,7 +624,7 @@
         </ul>
       </section>
 
-      <section class="left">
+      <section class="light">
         <h2>🗣️ Self Talk</h2>
 
         <p>
@@ -703,6 +687,41 @@
       </blockquote>
     </main>
 
+      <script>
+      // Certifications Stacked Cards Animation using GSAP
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".item");
+        const offset = 20; // Position offset between the stacked cards
+
+        // Initial setup with GSAP
+        gsap.set(items, {
+          x: (i) => offset * i,
+          y: (i) => -offset * i,
+          zIndex: (i) => items.length - i,
+        });
+
+        // Function to loop cards cyclically
+        function loopCards() {
+          const totalItems = items.length;
+          let current = 0; // Starting at the first card
+
+          setInterval(() => {
+            current = (current + 1) % totalItems;
+            items.forEach((item, i) => {
+              const newIndex = (current + i) % totalItems;
+              gsap.to(item, {
+                x: offset * newIndex,
+                y: -offset * newIndex,
+                zIndex: totalItems - newIndex,
+                duration: 0.8,
+              });
+            });
+          }, 3000); // Move cards every 3 seconds
+        }
+
+        loopCards(); // Start the animation
+      });
+    </script>
     
   </body>
 </html>
