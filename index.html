@@ -458,22 +458,103 @@
 
           <!--------------------Certifications--------------------->
  <section class="left">
-        <h2>📜 Certifications</h2>
-        <p>
-          Below, you'll find a visual stack of certifications I've earned, with links to their corresponding proofs:
-        </p>
-        <div class="card-stack-container">
-          <!-- Stack Items (Certifications) -->
-          <a class="item" href="https://drive.google.com/file/d/1s7ADYRZlhBHmIhFzNb99CO3H4IOUDCjz/view?usp=drive_link" target="_blank">Comprehensive Monitoring with Prometheus (Skillsoft)</a>
-          <a class="item" href="https://drive.google.com/file/d/1qSLIkC27r845RUAA3TJWL0P2dMJIoAzZ/view?usp=drive_link" target="_blank">Create & Deploy React Apps to Netlify (Skillsoft)</a>
-          <a class="item" href="https://drive.google.com/file/d/1YRwtDpLCNpC7QGg2EFTHEep4FOj1V9Pf/view?usp=sharing" target="_blank">Creating a VR App with Unity (Skillsoft)</a>
-          <a class="item" href="https://drive.google.com/file/d/1V3FCeCn1uPN80stFAJ-QRLZcyJpnGBb2/view?usp=sharing" target="_blank">Creating Themes with WordPress (Skillsoft)</a>
-          <a class="item" href="https://drive.google.com/file/d/1ZEkyFocpWte85aQyqy9Gn5RVVb9LOV4O/view?usp=sharing" target="_blank">Generative AI (Guvi - SAWIT Learnathon)</a>
-          <a class="item" href="https://drive.google.com/file/d/1G8Jb3sbE6ZomMNSrtVn74_X8xDtZmjRw/view?usp=sharing" target="_blank">Microsoft Azure - Cloud Computing (Skillsoft)</a>
-          <a class="item" href="https://drive.google.com/file/d/1eTNOuJisUqjVJH44sQqRHRsauTl44X_U/view?usp=sharing" target="_blank">React Native Going Off-Platform (Skillsoft)</a>
-          <a class="item" href="https://drive.google.com/file/d/1LhKKuI-mzhqBpOMHFeyOK6Q6hHIpGmFv/view?usp=sharing" target="_blank">Working with Content in WordPress (Skillsoft)</a>
-        </div>
-      </section>
+  <h2>📜 Certifications</h2>
+  <p>
+    Below, you'll find a visual stack of certifications I've earned, with links to their corresponding proofs:
+  </p>
+  <div class="card-stack-container">
+    <!-- Stack Items (Certifications) -->
+    <a class="item" href="https://drive.google.com/file/d/1s7ADYRZlhBHmIhFzNb99CO3H4IOUDCjz/view?usp=drive_link" target="_blank">Comprehensive Monitoring with Prometheus (Skillsoft)</a>
+    <a class="item" href="https://drive.google.com/file/d/1qSLIkC27r845RUAA3TJWL0P2dMJIoAzZ/view?usp=drive_link" target="_blank">Create & Deploy React Apps to Netlify (Skillsoft)</a>
+    <a class="item" href="https://drive.google.com/file/d/1YRwtDpLCNpC7QGg2EFTHEep4FOj1V9Pf/view?usp=sharing" target="_blank">Creating a VR App with Unity (Skillsoft)</a>
+    <a class="item" href="https://drive.google.com/file/d/1V3FCeCn1uPN80stFAJ-QRLZcyJpnGBb2/view?usp=sharing" target="_blank">Creating Themes with WordPress (Skillsoft)</a>
+    <a class="item" href="https://drive.google.com/file/d/1ZEkyFocpWte85aQyqy9Gn5RVVb9LOV4O/view?usp=sharing" target="_blank">Generative AI (Guvi - SAWIT Learnathon)</a>
+    <a class="item" href="https://drive.google.com/file/d/1G8Jb3sbE6ZomMNSrtVn74_X8xDtZmjRw/view?usp=sharing" target="_blank">Microsoft Azure - Cloud Computing (Skillsoft)</a>
+    <a class="item" href="https://drive.google.com/file/d/1eTNOuJisUqjVJH44sQqRHRsauTl44X_U/view?usp=sharing" target="_blank">React Native Going Off-Platform (Skillsoft)</a>
+    <a class="item" href="https://drive.google.com/file/d/1LhKKuI-mzhqBpOMHFeyOK6Q6hHIpGmFv/view?usp=sharing" target="_blank">Working with Content in WordPress (Skillsoft)</a>
+  </div>
+
+  <style>
+    .card-stack-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      height: 250px;
+      margin: 40px auto;
+      width: 320px;
+    }
+
+    .item {
+      position: absolute;
+      background: linear-gradient(145deg, #293d5a, #1e2e48);
+      color: #d8f3ff;
+      border: 1px solid rgba(220, 255, 255, 0.3);
+      border-radius: 8px;
+      box-shadow: 0px 4px 15px rgba(0, 160, 255, 0.2);
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 20px rgba(0, 180, 255, 0.4);
+    }
+  </style>
+
+  <script>
+    // Stacked Card Animation using GSAP
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = document.querySelectorAll(".item");
+      const offset = 20; // Position offset between cards
+
+      // Set initial position for each card using GSAP
+      gsap.set(items, {
+        x: (i) => offset * i,
+        y: (i) => -offset * i,
+        zIndex: (i) => items.length - i,
+      });
+
+      function updateCardPositions() {
+        items.forEach((item, index) => {
+          gsap.to(item, {
+            duration: 0.8,
+            x: offset * index,
+            y: -offset * index,
+            zIndex: items.length - index,
+            ease: "power2.out",
+          });
+        });
+      }
+
+      function loopCards() {
+        const totalItems = items.length;
+        let current = 0;
+
+        setInterval(() => {
+          // Update zIndex dynamically by rotating cards
+          gsap.to(items[current], { zIndex: totalItems - 1, duration: 0.8 });
+
+          // Shift the first card to the back
+          const first = items[current];
+          items[current] = items[0];
+          items.push(first);
+
+          current = (current + 1) % totalItems;
+          updateCardPositions();
+        }, 3000); // Adjust interval timing to 3s
+      }
+      loopCards();
+    });
+  </script>
+</section>
 
       
      <section class="left">
@@ -575,55 +656,135 @@
 
 
         <!-- New Favorites Section -->
-      <section class="light">
-        <h2>🌟 Favorites</h2>
-        <h3>📚 Books & Comics:</h3>
-        <ul>
-          <li>Comic: <strong>The Greatest Estate Developer</strong> – A perfect blend of intellect and humor. Highly recommended!</li>
-          <li>Non-Fiction: <strong>Online Investing for Dummies (10th Edition)</strong> – A dive into stock market basics.</li>
-          <li>Biography: <strong>Biography of Vivekananda</strong> – A source of immense inspiration.</li>
-        </ul>
-        <h3>🎥 Movies:</h3>
-        <ul>
-          <li>Hollywood: Interstellar, Inception, Harry Potter Series</li>
-          <li>Tollywood: A big fan of Tollywood movies, which have been a major part of my cultural upbringing.</li>
-        </ul>
-        <h3>🎞️ Anime:</h3>
-        <ul>
-          <li>Onepiece, Attack on Titan, Demon Slayer, Naruto, Inuyasha</li>
-        </ul>
-        <h3>🍴 Favorite Foods:</h3>
-        <ul>
-          <li>Boba Tea</li>
-          <li>Cheesecake</li>
-          <li>Biryani</li>
-        </ul>
-      </section>
+      <section class="light favorites-section">
+  <h2>🌟 Favorites</h2>
+  <h3>📚 Books & Comics:</h3>
+  <ul>
+    <li class="animated-item">Comic: <strong>The Greatest Estate Developer</strong> – A perfect blend of intellect and humor. Highly recommended!</li>
+    <li class="animated-item">Non-Fiction: <strong>Online Investing for Dummies (10th Edition)</strong> – A dive into stock market basics.</li>
+    <li class="animated-item">Biography: <strong>Biography of Vivekananda</strong> – A source of immense inspiration.</li>
+  </ul>
+  <h3>🎥 Movies:</h3>
+  <ul>
+    <li class="animated-item">Hollywood: Interstellar, Inception, Harry Potter Series</li>
+    <li class="animated-item">Tollywood: A big fan of Tollywood movies, which have been a major part of my cultural upbringing.</li>
+  </ul>
+  <h3>🎞️ Anime:</h3>
+  <ul>
+    <li class="animated-item">Onepiece, Attack on Titan, Demon Slayer, Naruto, Inuyasha</li>
+  </ul>
+  <h3>🍴 Favorite Foods:</h3>
+  <ul>
+    <li class="animated-item">Boba Tea</li>
+    <li class="animated-item">Cheesecake</li>
+    <li class="animated-item">Biryani</li>
+  </ul>
+
+  <style>
+    .favorites-section h3 {
+      color: #76ffff; /* Bright cyan highlight for headings */
+    }
+    .favorites-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .favorites-section li {
+      margin: 10px 0;
+      background: linear-gradient(145deg, #1b2e3e, #15222f); /* Dark gradient */
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: #eaf6ff; /* Light text for readability */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .favorites-section li:hover {
+      transform: scale(1.05); /* Subtle scaling */
+      box-shadow: 0 8px 15px rgba(0, 200, 255, 0.4); /* Cyan glow */
+    }
+
+    /* Scroll Animation */
+    .animated-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .animated-item.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</section>
+
+<script>
+  // Scroll animation for Favorites items
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".animated-item");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+  });
+</script>
+      
 
       <!-- Extra-Curricular Activities Section -->
-      <section class="left">
-        <h2>🎭 Extra-Curricular Activities</h2>
-        <h3>Art & Community Work:</h3>
-        <ul>
-          <li>Painting and coloring walls at a government primary school in Bengaluru (NGO activity). 
-            <a href="https://drive.google.com/file/d/1DK94SNprZBzmWzLcp4iqBdwpwmXztuSW/view?usp=sharing"
-               target="_blank">View Activity</a>.
-          </li>
-        </ul>
-        <h3>School Competitions & Performing Arts:</h3>
-        <ul>
-          <li>Performed in theatre musicals, Indian Classical Dance (Bharatnatyam, Kuchipudi), and Western dance forms during events like Independence Day and festivals.</li>
-        </ul>
-        <h3>Olympiads & Contests:</h3>
-        <ul>
-          <li>Gold Medal in General Knowledge at INTSO Science Olympiad (8th grade).</li>
-          <li>Participated in Regional Mathematics Olympiad (RMO), reaching State Level.</li>
-          <li>Rank under 50 in International Math Olympiad (IMO) during 6th grade.</li>
-          <li>Bronze Medal in Skipping Tournament (5th grade).</li>
-          <li>Gold Medal in School Cricket Tournament (8th grade).</li>
-        </ul>
-      </section>
+  <section class="left activities-section">
+  <h2>🎭 Extra-Curricular Activities</h2>
+  <h3>Art & Community Work:</h3>
+  <ul>
+    <li class="orbit-item">Painting and coloring walls at a government primary school in Bengaluru (NGO activity). 
+      <a href="https://drive.google.com/file/d/1DK94SNprZBzmWzLcp4iqBdwpwmXztuSW/view?usp=sharing" target="_blank">View Activity</a>.
+    </li>
+  </ul>
+  <h3>School Competitions & Performing Arts:</h3>
+  <ul>
+    <li class="orbit-item">Performed in theatre musicals, Indian Classical Dance (Bharatnatyam, Kuchipudi), and Western dance forms during events like Independence Day and festivals.</li>
+  </ul>
+  <h3>Olympiads & Contests:</h3>
+  <ul>
+    <li class="orbit-item">Gold Medal in General Knowledge at INTSO Science Olympiad (8th grade).</li>
+    <li class="orbit-item">Participated in Regional Mathematics Olympiad (RMO), reaching State Level.</li>
+    <li class="orbit-item">Rank under 50 in International Math Olympiad (IMO) during 6th grade.</li>
+    <li class="orbit-item">Bronze Medal in Skipping Tournament (5th grade).</li>
+    <li class="orbit-item">Gold Medal in School Cricket Tournament (8th grade).</li>
+  </ul>
 
+  <style>
+    .orbit-item {
+      margin: 10px 0;
+      background: rgba(30, 40, 60, 0.9); /* Semi-transparent dark background */
+      padding: 10px 15px;
+      border-radius: 10px;
+      color: #eaf6ff; /* Light text */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      position: relative;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .orbit-item:hover {
+      transform: translateX(5px) rotate(-1deg); /* Simulates orbit-like movement */
+      box-shadow: 0 8px 15px rgba(0, 200, 255, 0.5); /* Cyan glow */
+    }
+
+    .activities-section h3 {
+      color: #76ffff; /* Bright cyan for headings */
+    }
+  </style>
+</section>
+
+
+      
+
+      <!----self talk----->
       <section class="light">
         <h2>🗣️ Self Talk</h2>
 
@@ -686,42 +847,6 @@
         </p>
       </blockquote>
     </main>
-
-      <script>
-      // Certifications Stacked Cards Animation using GSAP
-      document.addEventListener("DOMContentLoaded", function () {
-        const items = document.querySelectorAll(".item");
-        const offset = 20; // Position offset between the stacked cards
-
-        // Initial setup with GSAP
-        gsap.set(items, {
-          x: (i) => offset * i,
-          y: (i) => -offset * i,
-          zIndex: (i) => items.length - i,
-        });
-
-        // Function to loop cards cyclically
-        function loopCards() {
-          const totalItems = items.length;
-          let current = 0; // Starting at the first card
-
-          setInterval(() => {
-            current = (current + 1) % totalItems;
-            items.forEach((item, i) => {
-              const newIndex = (current + i) % totalItems;
-              gsap.to(item, {
-                x: offset * newIndex,
-                y: -offset * newIndex,
-                zIndex: totalItems - newIndex,
-                duration: 0.8,
-              });
-            });
-          }, 3000); // Move cards every 3 seconds
-        }
-
-        loopCards(); // Start the animation
-      });
-    </script>
     
   </body>
 </html>
